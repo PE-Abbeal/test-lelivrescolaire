@@ -1,0 +1,211 @@
+.field {
+    --border-width: 1px;
+
+    --placeholder-color: var(--grey-color);
+    --main-text-color: var(--black-color);
+
+    --empty-color: var(--dark-color);
+    --empty-bg: var(--pale-color);
+    --empty-border: var(--pale-color);
+
+    --filled-bg: var(--bg-color);
+    --filled-border: var(--grey-color);
+
+    --hover-bg: var(--bg-color);
+    --hover-border: var(--grey-color);
+
+    --focus-bg: var(--bg-color);
+    --focus-border: var(--secondary-color);
+    --focus-box-shadow: 0 9px 16px 0 rgba(242, 183, 5, 0.1);
+
+    --disabled-bg: var(--pale-color);
+    --disabled-border: var(--pale-color);
+    --disabled-color: var(--grey-color);
+
+    --invalid-bg: var(--error-color);
+    --invalid-border: var(--error-color);
+    --invalid-color: var(--error-color);
+
+    --valid-bg: var(--success-color);
+    --valid-border: var(--success-color);
+    --valid-color: var(--success-color);
+
+    --info-bg: var(--info-color);
+    --info-border: var(--info-color);
+    --input-info-color: var(--info-color);
+}
+
+.field {
+    display: inline-block;
+
+    .label {
+        display: inline-block;
+        --color: var(--main-text-color);
+    }
+
+    input {
+        border: 0;
+        background-color: unset;
+        max-width: 100%;
+    }
+
+    .input {
+        --color: var(--main-text-color);
+
+        font-size: 14px;
+        font-weight: medium;
+        align-items: center;
+        background-color: var(--filled-bg);
+        display: flex;
+        min-height: 48px;
+
+        border-style: solid;
+        border-width: 1px;
+        border-color: var(--filled-border);
+        border-radius: 9px;
+        box-shadow: 0;
+        padding-top: calc(14px - var(--border-width));
+        padding-left: calc(16px - var(--border-width));
+        padding-bottom: calc(14px - var(--border-width));
+        padding-right: calc(16px - var(--border-width));
+        position: relative;
+
+        transition: border-color 0.3s, box-shadow 0.3s, color 0.3s,
+            font-weight 0.3s, background-color 0.3s;
+
+        &.with-icon {
+            padding-right: calc(16px - var(--border-width) + 16px + 28px);
+        }
+    }
+
+    &.empty {
+        .input {
+            font-weight: regular;
+            background-color: var(--empty-bg);
+            border-color: var(--empty-border);
+
+            &.permanent-border {
+                border-color: var(--filled-bg);
+            }
+        }
+    }
+
+    .input:hover {
+        --color: var(--main-text-color);
+        background-color: var(--hover-bg);
+        border-color: var(--hover-border);
+        box-shadow: 0 9px 16px 0 rgba(144, 144, 144, 0.1);
+    }
+
+    &.invalid {
+        .input,
+        .label,
+        .helper {
+            --color: var(--invalid-color);
+        }
+
+        .input {
+            border-color: var(--invalid-border);
+
+            &::placeholder,
+            &:-ms-input-placeholder,
+            &::-ms-input-placeholder,
+            .placeholder {
+                font-weight: bold;
+                --color: var(--invalid-color);
+                color: var(--invalid-color) !important;
+            }
+        }
+    }
+
+    &.valid {
+        .input,
+        .label,
+        .helper {
+            --color: var(--valid-color);
+        }
+
+        .input {
+            border-color: var(--valid-color);
+
+            &::placeholder,
+            &:-ms-input-placeholder,
+            &::-ms-input-placeholder,
+            .placeholder {
+                font-weight: bold;
+                --color: var(--valid-color);
+                color: var(--valid-color) !important;
+            }
+        }
+    }
+
+    &.info {
+        .input,
+        .label,
+        .helper {
+            --color: var(--input-info-color);
+        }
+
+        .input {
+            border-color: var(--info-border);
+
+            &::placeholder,
+            &:-ms-input-placeholder,
+            &::-ms-input-placeholder,
+            .placeholder {
+                font-weight: bold;
+                --color: var(--input-info-color);
+                color: var(--input-info-color) !important;
+            }
+        }
+    }
+
+    .input:focus {
+        --color: var(--main-text-color);
+        font-weight: medium;
+        background-color: var(--focus-bg);
+        border-color: var(--focus-border);
+        box-shadow: var(--focus-box-shadow);
+
+        &::placeholder,
+        &:-ms-input-placeholder,
+        &::-ms-input-placeholder,
+        .placeholder {
+            font-weight: medium;
+            --color: var(--placeholder-color);
+            color: var(--placeholder-color) !important;
+        }
+    }
+
+    &.disabled {
+        opacity: var(--disabled-opacity);
+
+        .input {
+            --color: var(--disabled-color);
+            background-color: var(--disabled-bg);
+            border-color: var(--disabled-border);
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+    }
+
+    &::placeholder,
+    &:-ms-input-placeholder,
+    &::-ms-input-placeholder,
+    .placeholder {
+        font-weight: regular;
+        --color: var(--placeholder-color);
+        color: var(--placeholder-color) !important;
+        opacity: 1;
+    }
+
+    .input-icon {
+        right: 16px;
+    }
+
+    .helper {
+        font-size: 10px;
+        font-weight: regular;
+        --color: var(--main-text-color);
+    }
+}

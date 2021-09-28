@@ -91,6 +91,7 @@ export function useArray(initial) {
             replace,
             pop,
             shift,
+            modifyById,
         ]
     )
     return [value, actions]

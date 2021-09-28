@@ -1,26 +1,32 @@
 [
     {
         "id": "2ac90ef5-9408-4935-b36d-3152b4f843ab",
-        "name": "Chris"
+        "name": "Chris",
+        "age": 19
     },
     {
         "id": "7ac90ef5-9408-4935-b36d-3152b4f843ac",
-        "name": "Arnaud"
+        "name": "Arnaud",
+        "age": 17
     },
     {
         "id": "4ac90ef5-9408-4935-b36d-3152b4f8431b",
-        "name": "Matthieu"
+        "name": "Matthieu",
+        "age": 18
     },
     {
         "id": "2ac90ef5-9408-4935-b36d-3152b4f843cc",
-        "name": "Paul"
+        "name": "Paul",
+        "age": 18
     },
     {
         "id": "1ab90ef5-9408-4935-b36d-3152b4f843ab",
-        "name": "Louis"
+        "name": "Louis",
+        "age": 18
     },
     {
         "id": "3ac90ef5-9408-4935-b36d-3152b4f843ab",
-        "name": "Etienne"
+        "name": "Etienne",
+        "age": 19
     }
 ]

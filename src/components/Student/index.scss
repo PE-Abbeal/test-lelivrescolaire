@@ -1,0 +1,64 @@
+.student-container {
+    svg path {
+        &.chairback {
+            stroke: var(--light-color);
+            fill: rgba(210, 210, 210, 0.1);
+            stroke-dashoffset: 100;
+            stroke-dasharray: 100;
+            stroke-linecap: round;
+            animation: chairBackAppear 0.5s forwards ease-in;
+        }
+
+        &.student {
+            // opacity: 0;
+            transform: scale(0);
+            transform-origin: bottom center;
+            animation: studentAppear 0.5s 0.5s forwards ease-in-out;
+        }
+
+        &.chevalet {
+            --d: path('M 7 36 L 8 30 L 24 30 L 23 36 Z');
+            d: var(--d);
+            transition: d 0.3s, fill 0.3s;
+        }
+    }
+
+    .student-name {
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    &:hover {
+        svg path.chevalet {
+            --d: path('M 2 36 L 3 24 L 29 24 L 30 36 Z');
+            fill: rgb(180, 180, 180);
+        }
+
+        .student-name {
+            opacity: 1;
+        }
+    }
+}
+
+@keyframes chairBackAppear {
+    to {
+        opacity: 1;
+        stroke-dashoffset: 0;
+        fill: rgba(210, 210, 210, 1);
+    }
+}
+
+@keyframes studentAppear {
+    50% {
+        transform: scale(1.2);
+    }
+    70% {
+        transform: scale(0.95);
+    }
+    90% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
